@@ -25,6 +25,7 @@ import static com.google.common.collect.Streams.zip;
 
 public class EventListener implements ConcurrentEventListener {
 
+    @Override
     public void setEventPublisher(EventPublisher eventPublisher) {
         eventPublisher.registerHandlerFor(TestSourceRead.class, testSourceReadHandler);
 
@@ -35,6 +36,7 @@ public class EventListener implements ConcurrentEventListener {
 
     private EventHandler<TestSourceRead> testSourceReadHandler = new EventHandler<TestSourceRead>() {
 
+        @Override
         public void receive(TestSourceRead event) {
 
             POSModel model = null;
@@ -54,7 +56,6 @@ public class EventListener implements ConcurrentEventListener {
             Stream<ImmutableMap<String,String>> taggedWords = zip(Arrays.stream(words), Arrays.stream(tags), ImmutableMap::of);
 
             taggedWords.forEach(map -> map.forEach((w, t) -> System.out.println(w + ": " + PennTreebankTags.tags.get(t))));
-            System.exit(0);
 
         }
     };
