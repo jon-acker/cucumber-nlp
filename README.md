@@ -5,6 +5,7 @@ Focus on Ubiquitous language etc.
 Currenty, all the plugin does is, when you run scenarios - apart from running tests or printing out undefined steps - there's a output of the POS analysis.
 This could be used to consolidate the language used in the scenarios making them more consistent, being able to suggest name of Objets or Types to use in the code or even generate classes and method based on nouns, verbs, adverbs etc.
 
+```
 Example output:
 Lending: Verb, gerund or present participle
 a: Determiner
@@ -110,3 +111,4 @@ charged: Verb, past participle
 a: Determiner
 £5: Cardinal number
 fine: Noun, singular or mass
+```
